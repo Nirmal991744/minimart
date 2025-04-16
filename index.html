@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Data</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>
+        <a
+          href="#"
+          style="cursor: pointer; color: #ffffff; text-decoration: none"
+        >
+          MINI MART</a
+        >
+      </h2>
+      <select id="price-filter" onchange="filterByPrice()">
+        <option value="">Select Price Range</option>
+        <option value="100-200">₹100 - ₹200</option>
+        <option value="less-than-5000">Less than ₹5000</option>
+        <option value="6000-50000">₹6000 - ₹50000</option>
+        <option value="greater-than-500000">Greater than ₹500000</option>
+      </select>
+      <div>
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search by product name..."
+          oninput="filterCarts()"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+          />
+        </svg>
+        <div class="cart-info">
+          <img
+            src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000"
+            alt="Cart Icon"
+            id="cart"
+            onclick="toggleCartModal()"
+          />
+          <div id="cart-badge" class="cart-badge" style="display: none">0</div>
+        </div>
+        <div id="cart-badge" class="cart-badge" style="display: none">0</div>
+      </div>
+    </div>
+
+    <div id="cart-container" class="cart-container"></div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" style="display: none">
+      <div class="cart-modal-content">
+        <button class="close-modal" onclick="toggleCartModal()">X</button>
+        <h3>Shopping Cart</h3>
+        <div id="cart-items-list"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            We are an online store that offers the best products at unbeatable
+            prices. Your satisfaction is our priority.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><strong>Email:</strong> support@example.com</li>
+            <li><strong>Phone:</strong> +1 234 567 890</li>
+            <li><strong>Address:</strong> 123 Main Street, City, Country</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://wa.me/1234567890" target="_blank" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Example E-Commerce Store. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="card.js"></script>
+  </body>
+</html>
